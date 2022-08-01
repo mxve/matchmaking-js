@@ -2,21 +2,28 @@
 
 Matchmaking will help you to create matches!
 
+
+## About
+This is a fork of https://github.com/Luifr/matchmaking at commit 3f19ed585f4d326a009ce389cdb833b2dbaadd07.
+
+### Changes
+- Made FifoMatchMaker actually ***F**irst **i**n **f**irst **o**ut*
+
 ### Installing
 
 ```
-npm i matchmaking
+npm i @mxve/matchmaking
 ```
 ---
 ## How to use
 
-####LobbyMaker
+#### LobbyMaker
 
 With this class you can create, list and join lobbies
 They can have password or be private (joined by name)
 
 ```
-const { LobbyMaker } = require('matchmaking');
+const { LobbyMaker } = require('@mxve/matchmaking');
 
 function runGame(players) {
 	console.log("Game started with:");
@@ -46,19 +53,23 @@ lobby.start(id);
 
 ```
 
-####FifoMatchMaker
+#### FifoMatchMaker
 
 This one is really simple, just push players to the queue, and games will be started automatically!
 
 ```
-const { FifoMatchmaker } = require('matchmaking');
+const { FifoMatchmaker } = require('@mxve/matchmaking');
 
 function runGame(players) {
 	console.log("Game started with:");
 	console.log(players);
 }
 
-let mm = new FifoMatchmaker(runGame, { checkInterval: 2000 });
+function getPlayerKey(player){
+	return player.id;
+}
+
+let mm = new FifoMatchmaker(runGame, getPlayerKey, { checkInterval: 2000 });
 
 let player1 = { id:1 }
 let player2 = { id:2 }
@@ -157,6 +168,7 @@ mm.push(player2);
 ## Authors
 
 * **Lui Franco Rocha**
+* **mxve**
 
 ## License
 

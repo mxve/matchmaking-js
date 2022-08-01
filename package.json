@@ -1,6 +1,6 @@
 {
-  "name": "matchmaking",
-  "version": "0.4.32",
+  "name": "@mxve/matchmaking",
+  "version": "0.5.0",
   "description": "Create matches or lobbies for two or more players/objects",
   "main": "javascript/index.js",
   "types": "javascript/index.d.ts",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luifr/matchmaking.git"
+    "url": "git+https://github.com/mxve/matchmaking-js.git"
   },
   "author": "Lui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Luifr/matchmaker/issues"
+    "url": "https://github.com/mxve/matchmaker-js/issues"
   },
-  "homepage": "https://github.com/Luifr/matchmaker#readme",
+  "homepage": "https://github.com/mxve/matchmaker-js#readme",
   "dependencies": {},
   "devDependencies": {
     "typescript": "^3.6.4"
