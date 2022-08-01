@@ -17,7 +17,7 @@ export class FifoMatchmaker<P> extends Matchmaker<P> {
 		while (this.queue.length >= this.minMatchSize) {
 			players = [];
 			while (this.queue.length > 0 && players.length < this.maxMatchSize) {
-				players.push(this.queue.pop() as P);
+				players.push(this.queue.shift() as P);
 			}
 			this.resolver(players);
 		}
